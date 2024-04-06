@@ -1,0 +1,29 @@
+[workspace]
+resolver = "2"
+
+members = [
+    "sk_website_domain",
+    "sk_website_application",
+    "sk_website_infrastructure",
+    
+    "sk_website_presentation/cli",
+    "sk_website_presentation/web",
+]
+
+default-members = [
+    "sk_website_presentation/web"
+]
+
+[workspace.package]
+edition = "2021"
+authors = ["SOCGNA Childéric <socgnachilderic@proton.me>"]
+description = "My personal Website"
+readme = "./README.md"
+
+[workspace.dependencies]
+async-trait = "0.1.79"
+chrono = { version = "0.4.37", features = ["serde"] }
+dotenv = "0.15.0"
+serde = { version = "1.0.197", features = ["derive"] }
+serde_json = "1.0.115"
+uuid = { version = "1.8.0", features = ["serde", "v4"] }

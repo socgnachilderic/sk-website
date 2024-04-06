@@ -1,0 +1,15 @@
+{
+    "tailwindCSS.experimental.classRegex": ["class: \"(.*)\""],
+    "tailwindCSS.includeLanguages": {
+        "rust": "html"
+    },
+    "rust-analyzer.linkedProjects": [
+        "./Cargo.toml",
+        "./Cargo.toml",
+        "./sk_website_presentation/web/Cargo.toml",
+        "./sk_website_presentation/web/Cargo.toml",
+        "./sk_website_presentation/web/Cargo.toml",
+        "./sk_website_presentation/web/Cargo.toml",
+        "./sk_website_presentation/web/Cargo.toml"
+    ]
+}

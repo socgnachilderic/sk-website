@@ -1,0 +1,33 @@
+[package]
+name = "sk_website"
+version = "0.1.0"
+edition.workspace = true
+authors.workspace = true
+description.workspace = true
+readme.workspace = true
+
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+sk_website_application = { path = "../../sk_website_application", optional = true }
+sk_website_infrastructure = { path = "../../sk_website_infrastructure", optional = true }
+
+axum = { version = "0.7.5", optional = true }
+dotenv = "0.15.0"
+serde = { version = "1.0.197", features = ["derive"] }
+serde_json = "1.0.115"
+
+dioxus = { version = "0.5", features = ["fullstack", "router"] }
+dioxus-free-icons = { version = "0.8.3", features = ["ionicons"] }
+manganis = "0.2.2"
+
+# Debug
+log = "0.4.19"
+dioxus-logger = "0.4.1"
+
+[features]
+default = []
+fullstack = ["dioxus/fullstack"]
+server = ["axum", "dioxus/axum", "sk_website_application", "sk_website_infrastructure"]
+web = ["dioxus/web"]
