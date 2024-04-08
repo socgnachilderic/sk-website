@@ -1,7 +1,6 @@
-use sqlx::{Pool, Postgres};
-use sqlx::postgres::PgPoolOptions;
 use dotenv::dotenv;
-// use std::
+use sqlx::postgres::PgPoolOptions;
+use sqlx::{Pool, Postgres};
 
 pub mod sqlx_user_repository;
 

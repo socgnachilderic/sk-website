@@ -12,6 +12,7 @@ readme.workspace = true
 [dependencies]
 async-trait = { workspace = true }
 chrono = { workspace = true }
+phonenumber = "0.3.3"
 serde = { workspace = true }
 uuid = { workspace = true }
 

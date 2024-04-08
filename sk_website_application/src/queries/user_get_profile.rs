@@ -18,11 +18,12 @@ impl UserGetProfileHandler {
 #[async_trait]
 impl BaseHandler for UserGetProfileHandler {
     type Action = ();
-    type Response = UserDTO;
+    type Response = Option<UserDTO>;
 
     async fn execute(&self, _: Self::Action) -> Self::Response {
-        let user = self.user_repository.find_current_user().await;
-
-        UserDTO::from(user)
+        self.user_repository
+            .find_superuser()
+            .await
+            .map(UserDTO::from)
     }
 }

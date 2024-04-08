@@ -1,15 +1,19 @@
 {
-    "tailwindCSS.experimental.classRegex": ["class: \"(.*)\""],
+    "tailwindCSS.experimental.classRegex": [
+        "class: \"(.*)\""
+    ],
     "tailwindCSS.includeLanguages": {
         "rust": "html"
     },
     "rust-analyzer.linkedProjects": [
         "./Cargo.toml",
-        "./Cargo.toml",
+        "./sk_website_domain/Cargo.toml",
+        "./sk_website_application/Cargo.toml",
+        "./sk_website_infrastructure/Cargo.toml",
+        "./sk_website_presentation/cli/Cargo.toml",
         "./sk_website_presentation/web/Cargo.toml",
-        "./sk_website_presentation/web/Cargo.toml",
-        "./sk_website_presentation/web/Cargo.toml",
-        "./sk_website_presentation/web/Cargo.toml",
-        "./sk_website_presentation/web/Cargo.toml"
-    ]
+    ],
+    // "dioxus.formatOnSave": "enabled",
+    "editor.formatOnSave": true,
+    "rust-analyzer.imports.group.enable": true,
 }

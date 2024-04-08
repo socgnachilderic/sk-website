@@ -1,7 +1,8 @@
-use serde::{Deserialize, Serialize};
+use convert_case::{Case, Casing};
 use dioxus::prelude::*;
+use serde::{Deserialize, Serialize};
 
-pub static USER: GlobalSignal<User> = Signal::global(|| User::default());
+pub static USER: GlobalSignal<User> = Signal::global(User::default);
 
 #[derive(Debug, Serialize, Deserialize, Default, Clone)]
 pub struct User {
@@ -18,6 +19,10 @@ pub struct User {
 
 impl User {
     pub fn full_name(&self) -> String {
-        format!("{} {}", self.last_name, self.first_name)
+        format!(
+            "{} {}",
+            self.last_name.to_uppercase(),
+            self.first_name.to_case(Case::Title)
+        )
     }
 }

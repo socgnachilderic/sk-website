@@ -1,5 +1,3 @@
-
-
 use std::sync::Arc;
 
 use sk_website_application::queries::user_get_profile::UserGetProfileHandler;
@@ -7,7 +5,7 @@ use sk_website_infrastructure::database::get_pool;
 use sk_website_infrastructure::database::sqlx_user_repository::SqlxUserRepository;
 
 pub(crate) struct InjectionContainer {
-    pub user_get_current_profile: UserGetProfileHandler
+    pub user_get_current_profile: UserGetProfileHandler,
 }
 
 impl InjectionContainer {

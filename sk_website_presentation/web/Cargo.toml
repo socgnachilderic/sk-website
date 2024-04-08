@@ -25,6 +25,7 @@ manganis = "0.2.2"
 # Debug
 log = "0.4.19"
 dioxus-logger = "0.4.1"
+convert_case = "0.6.0"
 
 [features]
 default = []

@@ -14,3 +14,4 @@ Cargo.lock
 
 .env
 .idea/*
+sk-config.yaml

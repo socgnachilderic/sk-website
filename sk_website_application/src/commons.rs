@@ -4,7 +4,6 @@ use async_trait::async_trait;
 use serde::de::DeserializeOwned;
 use serde::Serialize;
 
-
 #[async_trait]
 pub trait BaseHandler {
     type Action: Serialize + DeserializeOwned + Debug;

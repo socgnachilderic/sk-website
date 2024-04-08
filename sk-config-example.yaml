@@ -1,0 +1,18 @@
+users:
+  - first_name: "Superuser"
+    last_name: "Superuser"
+    email: "superuser@acme.com"
+    phone_number: "+000 000000000"
+    birthdate: "1900-01-01"
+    country: "Cameroun"
+    city: "Yaoundé"
+    is_superuser: true
+    jobs: "Developer"
+  - first_name: "User"
+    last_name: "User"
+    email: "user@acme.com"
+    phone_number: "+000 000000001"
+    birthdate: "1990-01-01"
+    country: "Cameroun"
+    city: "Yaoundé"
+    jobs: "Guest"

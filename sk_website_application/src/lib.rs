@@ -1,4 +1,4 @@
-pub mod commons;
 pub mod commands;
-pub mod queries;
+pub mod commons;
 pub mod dto;
+pub mod queries;

@@ -1,5 +1,5 @@
 [package]
-name = "sk_website_application_cli"
+name = "sk_website_presentation_cli"
 version = "0.1.0"
 edition.workspace = true
 authors.workspace = true
@@ -9,6 +9,7 @@ readme.workspace = true
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
+sk_website_domain = { path = "../../sk_website_domain" }
 sk_website_application = { path = "../../sk_website_application" }
 sk_website_infrastructure = { path = "../../sk_website_infrastructure" }
 

@@ -6,7 +6,7 @@ use crate::models::USER;
 use crate::views::atoms::Button;
 use crate::views::molecules::SocialIcons;
 
-const BACKGROUND: manganis::ImageAsset = manganis::mg!(image("./public/img/header.jpg"));
+const BACKGROUND: manganis::ImageAsset = manganis::mg!(image("public/img/header.jpg"));
 
 #[component]
 pub fn HomeHero() -> Element {

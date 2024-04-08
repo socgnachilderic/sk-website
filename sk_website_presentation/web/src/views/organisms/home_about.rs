@@ -13,7 +13,10 @@ pub(crate) fn HomeAbout() -> Element {
             ("Birthdate".to_string(), user.birthdate),
             ("Email".to_string(), user.email),
             ("Phone".to_string(), user.phone_number),
-            ("Location".to_string(), format!("{}, {}", user.country, user.city)),
+            (
+                "Location".to_string(),
+                format!("{}, {}", user.country, user.city),
+            ),
         ]
     });
 
@@ -59,7 +62,7 @@ fn AboutCard(title: String, children: Element) -> Element {
 }
 
 #[component]
-fn AboutPersonalInfo(infos: Vec<(String, String)>) -> Element {    
+fn AboutPersonalInfo(infos: Vec<(String, String)>) -> Element {
     rsx! {
         ul {
             class: "space-y-4",

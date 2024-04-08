@@ -11,9 +11,16 @@ readme.workspace = true
 
 [dependencies]
 sk_website_domain = { path = "../sk_website_domain" }
+sk_website_application = { path = "../sk_website_application" }
 
 async-trait = { workspace = true }
 chrono = { workspace = true }
 dotenv = { workspace = true }
 serde = { workspace = true }
-sqlx = { version = "0.7.4", features = ["runtime-async-std-native-tls", "postgres", "chrono", "uuid"] }
+serde_yaml = "0.9.34"
+sqlx = { version = "0.7.4", features = [
+    "runtime-async-std-native-tls",
+    "postgres",
+    "chrono",
+    "uuid",
+] }

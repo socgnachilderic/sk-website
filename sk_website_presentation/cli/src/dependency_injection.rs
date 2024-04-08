@@ -1,10 +1,12 @@
 use std::sync::Arc;
 
-use sk_website_application::commands::admin_create_user::AdminCreateUserHandler;
-use sk_website_infrastructure::database::{get_pool, sqlx_user_repository::SqlxUserRepository};
+use sk_website_application::commands::{CreateSuperuserHandler, CreateUserHandler};
+use sk_website_infrastructure::database::get_pool;
+use sk_website_infrastructure::database::sqlx_user_repository::SqlxUserRepository;
 
 pub(crate) struct InjectionContainer {
-    pub admin_create_user_handler: AdminCreateUserHandler,
+    pub create_superuser_handler: CreateSuperuserHandler,
+    pub create_user_handler: CreateUserHandler,
 }
 
 impl InjectionContainer {
@@ -13,7 +15,8 @@ impl InjectionContainer {
         let user_repository = Arc::new(SqlxUserRepository(pool));
 
         Self {
-            admin_create_user_handler: AdminCreateUserHandler::new(user_repository),
+            create_superuser_handler: CreateSuperuserHandler::new(user_repository.clone()),
+            create_user_handler: CreateUserHandler::new(user_repository),
         }
     }
 }
