@@ -1,7 +1,9 @@
 use dioxus::prelude::*;
 
 use crate::models::{User, USER};
-use crate::views::organisms::{HomeAbout, HomeHero, HomeNavbar, HomeResume};
+use crate::views::organisms::{
+    HomeAbout, HomeHero, HomeNavbar, HomeResume, HomeServices, HomeStats,
+};
 
 #[component]
 pub(crate) fn Home() -> Element {
@@ -15,6 +17,8 @@ pub(crate) fn Home() -> Element {
             HomeNavbar {}
             HomeAbout {}
             HomeResume {}
+            HomeStats {}
+            HomeServices {}
         }
     } else {
         rsx! { div { "Loading dogs..." } }

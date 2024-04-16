@@ -1,3 +1,5 @@
+const { dynamicIconsPlugin, iconsPlugin, getIconCollections } = require("@egoist/tailwindcss-icons")
+
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   mode: "all",
@@ -26,5 +28,10 @@ module.exports = {
       },
     },
   },
-  plugins: [],
+  plugins: [
+    iconsPlugin({
+      collections: getIconCollections(["ion"])
+    }),
+    dynamicIconsPlugin(),
+  ],
 };

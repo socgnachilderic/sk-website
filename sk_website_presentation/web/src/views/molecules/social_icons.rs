@@ -1,62 +1,51 @@
 use dioxus::prelude::*;
-use dioxus_free_icons::icons::io_icons::{
-    IoLogoFacebook, IoLogoGithub, IoLogoGitlab, IoLogoLinkedin, IoLogoTwitter,
-};
-use dioxus_free_icons::{Icon, IconShape};
 
 #[component]
 pub fn SocialIcons(class: Option<String>) -> Element {
     rsx! {
         ul {
-            class: "flex max-w-[180px] justify-between text-white",
+            class: "flex max-w-[180px] justify-between text-white text-[18px]",
             class: if let Some(class) = class { class },
             SocialIcon {
                 href: "https://www.google.com",
-                icon: IoLogoFacebook,
+                class: "i-ion-social-facebook",
             },
             SocialIcon {
-                href: "https://www.google.com",
-                icon: IoLogoTwitter,
+                href: "https://twitter.com/c_childeric",
+                class: "i-ion-social-twitter-outline",
             },
             SocialIcon {
-                href: "https://www.google.com",
-                icon: IoLogoLinkedin,
+                href: "https://www.linkedin.com/in/childeric-socgna-kouyem-2690b3159",
+                class: "i-ion-social-linkedin",
             },
             SocialIcon {
-                href: "https://www.google.com",
-                icon: IoLogoGithub,
+                href: "https://github.com/socgnachilderic",
+                class: "i-ion-social-github",
             },
             SocialIcon {
-                href: "https://www.google.com",
-                icon: IoLogoGitlab,
+                href: "https://gitlab.com/socgnachilderic",
+                class: "i-ion-logo-gitlab",
             },
         }
     }
 }
 
 #[derive(Props, PartialEq, Clone)]
-struct SocialIconProps<T: IconShape + Clone + PartialEq + 'static> {
+struct SocialIconProps {
     #[props(into)]
     href: String,
-    icon: T,
-    #[props(default = 18)]
-    size: u16,
+    #[props(into)]
+    class: String,
 }
 
 #[component]
-fn SocialIcon<T: IconShape + Clone + PartialEq + 'static>(props: SocialIconProps<T>) -> Element {
-    let size: u32 = props.size.into();
-
+fn SocialIcon(props: SocialIconProps) -> Element {
     rsx! {
         li {
             a {
                 href: props.href,
                 target: "_blank",
-                Icon {
-                    width: size,
-                    height: size,
-                    icon: props.icon
-                }
+                i { class: " {props.class}" }
             }
         }
     }
